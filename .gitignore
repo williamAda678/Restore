@@ -487,3 +487,5 @@ API/store.db
 API/Data/Migrations/StoreContextModelSnapshot.cs
 API/Data/Migrations/20241228051704_InitialCreate.Designer.cs
 API/Data/Migrations/20241228051704_InitialCreate.cs
+API/store.db-shm
+API/store.db-wal
