@@ -5,29 +5,25 @@ const getInitialDarkMode = () => {
   return storedDarkMode ? JSON.parse(storedDarkMode) : true;
 };
 
-
 export const uiSlice = createSlice({
-    name:'ui',
-    initialState:{
-        isloading: false,
-        darkMode : getInitialDarkMode()
+  name: "ui",
+  initialState: {
+    isLoading: false,
+    darkMode: getInitialDarkMode(),
+  },
+  reducers: {
+    startLoading: (state) => {
+      state.isLoading = true;
     },
-    reducers: {
-        startLoading: (state) => {
-            state.isloading = true
-        },
-        stopLoading: (state) => {
-            state.isloading = false
-        },
+    stopLoading: (state) => {
+      state.isLoading = false;
+    },
 
-        setDarkMode: (state) => {
-            localStorage.setItem("darkMode", JSON.stringify(!state.darkMode));
-            state.darkMode = !state.darkMode
-        }
-    }
+    setDarkMode: (state) => {
+      localStorage.setItem("darkMode", JSON.stringify(!state.darkMode));
+      state.darkMode = !state.darkMode;
+    },
+  },
+});
 
-    
-})
-
-
-export const {startLoading, stopLoading, setDarkMode} = uiSlice.actions;
+export const { startLoading, stopLoading, setDarkMode } = uiSlice.actions;
